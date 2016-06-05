@@ -1,0 +1,7 @@
+jmp start
+z: db 17
+k: db 11
+start:
+mov a, [z]
+mov b, [k]
+add a, b

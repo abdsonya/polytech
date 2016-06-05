@@ -1,0 +1,14 @@
+jmp start
+my: db "17/11" 
+db 0
+start:
+mov c, my
+mov d, 232
+ab:
+mov a, [c]	
+mov [d], a
+inc c
+inc d  
+cmp b, [c]	
+jnz ab	
+hlt

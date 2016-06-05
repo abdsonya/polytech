@@ -1,0 +1,27 @@
+call program
+hlt
+program:
+mov a, 234
+mov d, 232
+push a
+div 100
+mov b, a
+add b, 48
+mov [d], b
+mul 100
+pop b
+sub b, a
+push b
+mov a, b
+div 10
+mov b, a
+add b, 48
+inc d
+mov [d], b
+mul 10
+pop b 
+sub b, a
+add b, 48 
+inc d
+mov [d], b
+ret

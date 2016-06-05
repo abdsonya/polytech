@@ -1,0 +1,79 @@
+mov a,2
+push a
+cmp a,6
+jae error
+add a,48
+mov d, 232
+mov [d],a
+inc d
+mov [d], 33
+inc d
+mov [d],61
+inc d
+cmp a,48
+je adt
+abcd:
+mov [d], a
+inc d
+mov [d],42
+inc d
+dec a
+cmp a, 49
+jae abcd
+dec d
+mov [d], 61
+mov a,0
+pop a
+cmp a,1
+je pr
+mov b,0
+mov b, a
+factorial: 
+dec b
+mul b
+cmp b, 1
+ja factorial
+pr:
+call program
+program:
+mov d, 250
+push a
+div 100
+mov b, a
+add b, 48
+mov [d], b
+mul 100
+pop b
+sub b, a
+push b
+mov a, b
+div 10
+mov b, a
+add b, 48
+inc d
+mov [d], b
+mul 10
+pop b 
+sub b, a
+add b, 48 
+inc d
+mov [d], b
+hlt
+adt:
+add a,1
+push 1
+jmp abcd
+error:
+jmp start
+my: db "error" 
+db 0
+start:
+mov c, my
+mov d, 232
+ab:
+mov a, [c]	
+mov [d], a
+inc c
+inc d  
+cmp b, [c]	
+jnz ab	

@@ -1,0 +1,20 @@
+call program
+z:
+hlt
+y: 
+mov a,1
+jmp p:
+program:
+mov a, 5
+mov b, a
+p:
+cmp a,1
+je z:
+cmp a,0
+je y
+factorial: 
+dec b
+mul b
+cmp b, 1
+ja factorial
+ret
